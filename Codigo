@@ -6,11 +6,14 @@ namespace Calculo_De_Media
     {
         static void Main(string[] args)
         {
+            // Instanciando o objeto
             CalculoMedia calculando = new();
 
+            // Capturando o nome do aluno
             Console.Write("Digite o nome do aluno: ");
             var nomeAluno = Console.ReadLine();
 
+            // Capturando as notas do aluno para fazer o cálculo
             Console.Write($"\nInsira a nota do primeiro bimestre do aluno {nomeAluno}: ");
             var primeiroBimestre = Convert.ToDouble(Console.ReadLine());
 
@@ -23,12 +26,14 @@ namespace Calculo_De_Media
             Console.Write($"Insira a nota do quarto bimestre do aluno {nomeAluno}: ");
             var quartoBimestre = Convert.ToDouble(Console.ReadLine());
 
+            // Exibindo o resultado
             Console.WriteLine($"\n\nMédia do aluno {nomeAluno}: {calculando.MediaAno(primeiroBimestre, segundoBimestre, terceiroBimestre, quartoBimestre).ToString("F2", CultureInfo.InvariantCulture)}");
 
             Console.ReadKey();
         }
     }
 
+    // Classe responsável pelo cálculo
     public class CalculoMedia
     {
         public double MediaAno(double n1, double n2, double n3, double n4)
